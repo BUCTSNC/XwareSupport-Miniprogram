@@ -1,0 +1,22 @@
+<!--pages/info/info.wxml-->
+<view class="personalInfo">
+  <mp-cell hover link ext-class="infoCell" bindtap="toSetUserInfo">
+    <view slot="title" class="title">
+      <text class="userName">{{name}}</text>
+      <text class="stuNO">工号/学号: {{NO}}</text>
+    </view>
+    <image slot="icon" src="{{avatar}}" mode="scaleToFill" style="width:120rpx;height:120rpx"></image>
+  </mp-cell>
+  <mp-cells title="工作人员功能">
+    <mp-cell link hover wx:if="{{functionaryInfo===false}}" bindtap="jumpTobind">
+      <view>绑定工作人员账号</view>
+    </mp-cell>
+    <mp-cell link hover wx:if="{{functionaryInfo}}" bindtap="myEvent">
+      <view>我的维修列表</view>
+    </mp-cell>
+    <mp-cell link hover wx:if="{{functionaryInfo}}" bindtap="scanCode">
+      <view>扫码开始维修</view>
+    </mp-cell>
+
+  </mp-cells>
+</view>

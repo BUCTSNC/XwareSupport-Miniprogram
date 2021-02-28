@@ -1,0 +1,25 @@
+<!--pages/myHandleList/myHandleList.wxml-->
+<view>
+  <mp-cells>
+    <scroll-view scroll-y="{{true}}" bindscrolltolower="toEnd" id="scroll" style="height:{{scrollHeight+'px'}};">
+      <mp-cell link hover wx:for="{{handleList}}" bindtap="jumpToDetail" data-id="{{index}}" wx:key="id">
+        <view class="detail">
+          <view class="time">
+            <text class="date">{{item.appointment.date}}</text>
+            <text class="slot">{{item.appointment.slot}}</text>
+          </view>
+        
+        <view class="eventInfo">
+                         <view class="UUID">UUID:{{item.uuid}}</view>
+                         <view class="problemType">{{item.appointment.problemType}}</view>
+                         <view class="hdt">修改时间: {{item.handletime}}</view>
+                    </view>
+        </view>
+        <text 
+          slot="footer" 
+          class="{{item.classType}} footerText">{{item.status}}
+        </text>
+      </mp-cell>
+    </scroll-view>
+  </mp-cells>
+</view>

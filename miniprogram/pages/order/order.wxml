@@ -1,0 +1,53 @@
+<!--pages/order/order.wxml-->
+<mp-toptips type="error" msg="{{error}}" show="{{error}}"></mp-toptips>
+<view class="container">
+    <mp-form-page wx:if="{{haslogin}}" title="{{title}}" style="width:100%;">
+        <mp-form id="form" rules="{{rules}}" models="{{formData}}">
+            <mp-cells title="问题信息" style="width:100%;">
+                <mp-cell prop="mainProblem" title="故障分类">
+                    <picker mode="selector" data-field="mainProblem" bindchange="mainProblemHandle"
+                    value="{{mainProblemIndex}}"
+                    range="{{mainProblemList}}"
+                    >
+                        <view>{{mainProblemList[mainProblemIndex]}}</view>
+                    </picker>
+                </mp-cell>
+                <mp-cell prop="subProblem" title="具体故障分类">
+                    <picker mode="selector" data-field="subProblem" bindchange="subProblemHandle"
+                    value="{{subProblemIndex}}"
+                    range="{{subProblemList}}">
+                        <view>{{subProblemList[subProblemIndex]}}</view>
+                    </picker>
+                </mp-cell>
+                <mp-cell prop="ProblemDetail" title="故障详情与备注">
+                    <textarea data-field="ProblemDetail" class="weui-input" bindchange="subProblemHandle" model:value="{{ProblemDetail}}"
+                    maxlength="-1"
+                    style="height: 3.3em;" 
+                    ></textarea>
+                </mp-cell>
+            </mp-cells>
+            <mp-cells title="预约时间" style="width:100%;">
+                <mp-cell prop="Date" title="日期">
+                    <picker mode="selector" data-field="Date" bindchange="dateHandle"
+                    value="{{dateIndex}}"
+                    range="{{date}}"
+                    >
+                        <view>{{date[dateIndex]}}</view>
+                    </picker>
+                </mp-cell>
+                <mp-cell prop="slot" title="时间段">
+                    <picker mode="selector"data-field="slot" bindchange="slotHandle"
+                    value="{{slotIndex}}"
+                    range="{{slot}}"
+                    range-key="slot"
+                    >
+                        <view>{{slot[slotIndex].slot}}</view>
+                    </picker>
+                </mp-cell>
+            </mp-cells>
+        </mp-form>
+        <view slot="button">
+            <button type="primary" class="weui-btn" bindtap="submitInfo">提交</button>
+        </view>
+    </mp-form-page>
+</view>

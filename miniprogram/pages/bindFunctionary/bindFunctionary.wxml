@@ -1,0 +1,16 @@
+<!--pages/bindFunctionary/bindFunctionary.wxml-->
+<mp-form-page title="绑定工作人员账号" subtitle="仅工作人员使用，请勿乱试">
+    <mp-form id="form" rules="{{rules}}" models="{{formData}}">
+      <mp-cells>
+        <mp-cell title="账号">
+          <input data-field="username" bindchange="usernameHandle"></input>
+        </mp-cell>
+        <mp-cell title="密码">
+          <input password="{{true}}" data-field="password" bindchange="passwordHandle"></input>
+        </mp-cell>
+      </mp-cells>
+    </mp-form>
+    <view slot="button">
+        <button class="weui-btn" type="primary" bindtap="submitForm">绑定</button>
+    </view>
+</mp-form-page>

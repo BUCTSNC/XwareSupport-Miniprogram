@@ -1,0 +1,25 @@
+
+page {
+  background: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.container{
+  background-color: #f6f6f6;
+}
+.Eventlist{
+  width: 750rpx;
+}
+.solved{
+  color: green;
+}
+.notontime{
+  color: red;
+}
+.unsolve{
+  color: red;
+}
+.waiting{
+  color: brown;
+}

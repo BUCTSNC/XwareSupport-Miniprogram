@@ -1,0 +1,36 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="Eventlist">
+        <mp-cells title="未完成预约">
+            <mp-cell link hover wx:for="{{incompleteAppointment}}" bindtap="jumpToDetail" data-id="{{item.id}}" wx:key="id">
+                <view class="detail">
+                    <view class="time">
+                        <text class="date">{{item.date}}</text>
+                        <text class="slot">{{item.slot}}</text>
+                    </view>
+                    <view class="problem">{{item.problemType}}</view>
+                </view>
+                <text 
+                slot="footer" 
+                class="{{item.classType}} footerText">{{item.textStatus}}
+                </text>
+            </mp-cell>
+        </mp-cells>
+        <mp-cells title="历史预约" >
+            <mp-cell link hover wx:for="{{completeAppointment}}" bindtap="jumpToDetail" wx:key="id" data-id="{{item.id}}">
+                <view class="detail">
+                    <view class="time">
+                        <text class="date">{{item.date}}</text>
+                        <text class="slot">{{item.slot}}</text>
+                    </view>
+                     <view class="problem">{{item.problemType}}</view>
+                </view>
+                <text 
+                slot="footer" 
+                class="{{item.classType}} footerText">{{item.textStatus}}
+                </text>
+            </mp-cell>
+            
+        </mp-cells>
+    </view>
+</view>

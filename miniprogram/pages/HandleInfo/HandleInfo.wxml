@@ -1,0 +1,110 @@
+<!--pages/HandleInfo/HandleInfo.wxml-->
+<mp-navigation-bar loading="{{loading}}" show="{{true}}" animated="{{animated}}" color="{{color}}" background="{{background}}" title="{{thisTitle}}" back="{{false}}" bindback="{{blur}}" style="height:50rpx"></mp-navigation-bar>
+<view class="pg">
+  <mp-cells title="预约信息">
+    <mp-cell title="UUID">
+      <view slot="footer">{{uuid}}</view>
+    </mp-cell>
+    <mp-cell title="日期">
+      <view slot="footer">{{date}}</view>
+    </mp-cell>
+    <mp-cell title="时间段">
+      <view slot="footer">{{slot}}</view>
+    </mp-cell>
+  </mp-cells>
+  <mp-cells title="故障信息">
+    <mp-cell title="故障类型">
+      <view slot="footer">{{problemType}}</view>
+    </mp-cell>
+    <mp-cell title="故障描述">
+      <view slot="footer">{{describe}}</view>
+    </mp-cell>
+  </mp-cells>
+  <mp-form>
+  <mp-cells title="故障类型确认">
+      <mp-cell title="">
+        <input model:value="{{detectProblemType}}"></input>
+      </mp-cell>
+  </mp-cells>
+  <scroll-view 
+  class="{{thisEditor==='detectInfo'?'cover':'normal'}} " style="{{thisEditor==='detectInfo'?'height:'+ (windowHeight-keyboardHeight-50)+'px;':''}}"
+  scroll-y="{{true}}"
+  
+  >
+  <mp-cells title="{{thisEditor==='detectInfo'?'':'检测与推断'}}" >
+    <editor
+    model:value="{{detectInfo}}"
+    id="detectInfo"
+      placeholder="此处写入故障信息"
+      show-img-size="{{true}}"
+      bindfocus="onEditorFocus"
+      bindblur="blur"
+      class="ql-container" placeholder="{{placeholder}}" bindstatuschange="onStatusChange"
+      style="{{thisEditor==='detectInfo'?'height:'+ (windowHeight-keyboardHeight-50)+'px;':''}}"
+      bindinput="richTextChange"
+    ></editor>
+  </mp-cells>
+</scroll-view>
+<scroll-view 
+  class="{{thisEditor==='handleWay'?'cover':'normal'}} " style="{{thisEditor==='handleWay'?'height:'+ (windowHeight-keyboardHeight-50)+'px;':''}}"
+  scroll-y="{{true}}"
+  >
+<mp-cells title="{{thisEditor==='handleWay'?'':'处理方法'}}" >
+    <editor
+    model:value="{{handleWay}}"
+    id="handleWay"
+      placeholder="此处写入故障信息"
+      show-img-size="{{true}}"
+      bindfocus="onEditorFocus"
+      bindblur="blur"
+      class="ql-container" placeholder="{{placeholder}}" bindstatuschange="onStatusChange"
+      style="{{thisEditor==='handleWay'?'height:'+ (windowHeight-keyboardHeight-50)+'px;':''}}"
+      bindinput="richTextChange"
+    ></editor>
+  </mp-cells>
+</scroll-view>
+<scroll-view 
+  class="{{thisEditor==='finalStatus'?'cover':'normal'}} " style="{{thisEditor==='finalStatus'?'height:'+ (windowHeight-keyboardHeight-50)+'px;':''}}"
+  scroll-y="{{true}}"
+  >
+  <mp-cells title="{{thisEditor==='finalStatus'?'':'最终结果'}}" >
+    <editor
+    model:value="{{finalStatus}}"
+    id="finalStatus"
+      placeholder="此处写入故障信息"
+      show-img-size="{{true}}"
+      bindfocus="onEditorFocus"
+      bindblur="blur"
+      class="ql-container" placeholder="{{placeholder}}" bindstatuschange="onStatusChange"
+      style="{{thisEditor==='finalStatus'?'height:'+ (windowHeight-keyboardHeight-50)+'px;':''}}"
+      bindinput="richTextChange"
+    ></editor>
+  </mp-cells>
+</scroll-view>
+<mp-cells title="附加图片">
+  <mp-cell>
+    <mp-uploader bindfail="uploadError" bindsuccess="uploadSuccess" select="{{selectFile}}" upload="{{uplaodFile}}" files="{{images}}" title="图片上传" tips="图片上传提示" max-count="9"></mp-uploader>
+  </mp-cell>
+
+</mp-cells>
+<mp-cells>
+  <mp-cell title="任务状态">
+    <picker range="{{pickerRange}}" value="{{index}}" bindchange="selectChange">
+      {{pickerRange[index]}}
+    </picker>
+  </mp-cell>
+</mp-cells>
+<button type="primary" style="margin: 30rpx auto;" bindtap="submit">提交</button>
+</mp-form>
+</view>
+<view class="toolbar" catchtouchend="format" hidden="{{keyboardHeight > 0 ? false : true}}" style="bottom: {{isIOS ? keyboardHeight : 0}}px;">
+  <i class="iconfont icon-charutupian" catchtouchend="insertImage"></i>
+  <i class="iconfont icon-format-header-2 {{formats.header === 2 ? 'ql-active' : ''}}" data-name="header" data-value="{{2}}"></i>
+  <i class="iconfont icon-format-header-3 {{formats.header === 3 ? 'ql-active' : ''}}" data-name="header" data-value="{{3}}"></i>
+  <i class="iconfont icon-zitijiacu {{formats.bold ? 'ql-active' : ''}}" data-name="bold"></i>
+  <i class="iconfont icon-zitixieti {{formats.italic ? 'ql-active' : ''}}" data-name="italic"></i>
+  <i class="iconfont icon-zitixiahuaxian {{formats.underline ? 'ql-active' : ''}}" data-name="underline"></i>
+  <i class="iconfont icon--checklist" data-name="list" data-value="check"></i>
+  <i class="iconfont icon-youxupailie {{formats.list === 'ordered' ? 'ql-active' : ''}}" data-name="list" data-value="ordered"></i>
+  <i class="iconfont icon-wuxupailie {{formats.list === 'bullet' ? 'ql-active' : ''}}" data-name="list" data-value="bullet"></i>
+</view>

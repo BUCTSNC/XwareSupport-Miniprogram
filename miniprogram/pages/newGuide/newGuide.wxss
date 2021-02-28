@@ -1,0 +1,49 @@
+/* pages/newGuide/newGuide.wxss */
+.guide{
+  display: flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.header{
+  display: flex;
+  flex-direction:column;
+  justify-content:center;
+  margin-bottom: 50rpx;
+}
+.body{
+  display: flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.title{
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  font-size: larger;
+  font-weight: bold;
+  padding: 20rpx 20rpx 20rpx 20rpx;
+}
+.subtitle{
+  font-size: x-small;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  font-weight: lighter;
+  padding: 0 80rpx;
+}
+.textGuider{
+  margin: 20rpx 45rpx;
+  margin-bottom: 30rpx;
+}
+.step{
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  
+}
+.confirm{
+  margin: 50rpx 0;
+}

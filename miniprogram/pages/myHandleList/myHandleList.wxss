@@ -1,0 +1,47 @@
+page {
+  background: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.Eventlist{
+  width: 750rpx;
+}
+
+.noAppointment{
+  background-color: #f6f6f6;
+  border:none;
+}
+.detail{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
+}
+.time{
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  width: 150rpx;
+  margin-right: 30rpx;
+}
+.date{
+  font-size: xx-small;
+}
+.slot{
+  font-size: xx-small;
+}
+.footerText{
+  margin-left: 20rpx;
+  font-size: smaller;
+  font-weight: bold;
+}
+.problemType{
+  margin: 10rpx 0;
+}
+.UUID{
+  font-size:xx-small;
+}
+.hdt{
+  font-size:xx-small;
+}

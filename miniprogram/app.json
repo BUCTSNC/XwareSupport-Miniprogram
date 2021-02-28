@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/order/order",
+    "pages/info/info",
+    "pages/setUserInfo/setUserInfo",
+    "pages/newGuide/newGuide",
+    "pages/appointment/appointment",
+    "pages/bindFunctionary/bindFunctionary",
+    "pages/myHandleList/myHandleList",
+    "pages/HandleInfo/HandleInfo",
+    "pages/eventExhibition/eventExhibition"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "Xware",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "useExtendedLib":{
+    "weui":true
+  },
+  "tabBar": {
+    "custom": false,
+    "color": "#7A7E83",
+    "selectedColor": "#479DE6",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/iconfont-list.png",
+        "selectedIconPath": "images/iconfont-list-active.png",
+        "text": "预约列表"
+      },
+      {
+        "pagePath":"pages/order/order",
+        "text":"预约",
+        "iconPath":"images/compose.png",
+        "selectedIconPath":"images/composeHL.png"
+      },
+      {
+        "pagePath":"pages/info/info",
+        "text":"个人中心",
+        "iconPath":"images/iconfont-user.png",
+        "selectedIconPath":"images/iconfont-user-active.png"
+      }
+    ]
+  }
+}

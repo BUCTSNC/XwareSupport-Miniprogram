@@ -1,0 +1,46 @@
+<!--pages/newGuide/newGuide.wxml-->
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+<view class="guide">
+  <view class="header">
+    <text class="title">欢迎使用xware预约小程序</text>
+    <text class="subtitle">您是第一次使用我们的服务，请参照以下的指引完成初始用户设置</text>
+  </view>
+  <view class="body">
+    <view class="step">
+      <view class="textGuider">
+        1、请点击下面的按钮完成初始信息授权
+      </view>
+      <view class="detail">
+        <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" wx:if="{{!userInfoAccess}}" type="primary">授权信息使用</button>
+        <button wx:else disabled="{{true}}">信息授权成功</button>
+      </view>
+    </view>
+    <view class="step">
+      <view class="textGuider">
+        2、请填写下面的信息，信息用于完成预约，将于预约时自动提交到后台并记录，请认真填写
+      </view>
+      <view class="detail">
+        <mp-form id="form" rules="{{rules}}" models="{{formData}}">
+          <mp-cells>
+            <mp-cell prop="NO" title="学号/工号">
+                    <input maxlength="10" type="number" data-field="NO" 
+                    class="weui-input" bindinput="formInputChange" 
+                    value="{{NO}}"></input>
+                </mp-cell>
+                <mp-cell prop="name" title="姓名">
+                    <input maxlength="10" type="text" data-field="name"  class="weui-input" bindinput="formInputChange" value="{{realName}}"></input>
+                </mp-cell>
+                <mp-cell prop="phoneNO" title="手机号码">
+                    <input maxlength="11" type="number" data-field="phoneNO" class="weui-input" bindinput="formInputChange" 
+                    value="{{phone}}"></input>
+                </mp-cell>
+          </mp-cells>
+          <view class="confirm">
+            <button bindtap="submitForm" type="primary">确认</button>
+          </view>
+        </mp-form>
+      </view>
+    </view>
+  </view>
+  
+</view>

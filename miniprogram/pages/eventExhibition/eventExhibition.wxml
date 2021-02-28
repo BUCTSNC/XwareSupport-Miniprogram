@@ -1,0 +1,40 @@
+<view>
+  <mp-cells title="故障信息">
+    <mp-cell title="故障类型"><view slot="footer">{{problemType}}</view></mp-cell>
+    <mp-cell title="故障描述/留言"><view slot="footer">{{describe}}</view></mp-cell>
+  </mp-cells>
+  <mp-cells title="预约日期">
+    <mp-cell title="预约日期"><view slot="footer">{{date}}</view></mp-cell>
+    <mp-cell title="预约时间段"><view slot="footer">{{slot}}</view></mp-cell>
+    <mp-cell title="预约状态"><view slot="footer" class="{{appointmentClassType}}">
+      {{appointmentStatus}}
+    </view></mp-cell>
+  </mp-cells>
+  <mp-cells title="检测类型">
+    <mp-cell>
+      {{detectProblemType}}
+    </mp-cell>
+  </mp-cells>
+  <mp-cells title="检测情况">
+    <mp-cell>
+      <rich-text nodes="{{detectInfo}}"></rich-text>
+    </mp-cell>
+  </mp-cells>
+  <mp-cells title="处理方法">
+    <mp-cell><rich-text nodes="{{handleWay}}"></rich-text></mp-cell>
+  </mp-cells>
+  <mp-cells title="处理结果">
+    <mp-cell><rich-text nodes="{{finalStatus}}"></rich-text></mp-cell>
+  </mp-cells>
+  <mp-cells title="处理信息">
+    <mp-cell title="处理人">
+      <view slot="footer">{{handler.realName}}</view>
+    </mp-cell>
+    <mp-cell title="处理状态">
+      <view slot="footer" class="{{handleClasstype}}">{{handleStatus}}</view>
+    </mp-cell>
+    <mp-cell title="处理日期">
+      <view slot="footer">{{handleTime}}</view>
+    </mp-cell>
+  </mp-cells>
+</view>

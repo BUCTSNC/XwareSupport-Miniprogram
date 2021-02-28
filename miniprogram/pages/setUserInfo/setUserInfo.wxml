@@ -1,0 +1,31 @@
+<!--pages/order/order.wxml-->
+<mp-toptips type="error" msg="{{error}}" show="{{error}}"></mp-toptips>
+<view class="container">
+    <mp-form-page wx:if="{{haslogin}}" title="个人信息">
+        <mp-form id="form" rules="{{rules}}" models="{{formData}}">
+            <mp-cells>
+                <mp-cell prop="NO" title="学号/工号">
+                    <input maxlength="10" type="number" data-field="NO" 
+                    class="weui-input" bindinput="formInputChange" 
+                    value="{{NO}}"></input>
+                </mp-cell>
+                <mp-cell prop="name" title="姓名">
+                    <input maxlength="10" type="text" data-field="name"  class="weui-input" bindinput="formInputChange" value="{{realName}}"></input>
+                </mp-cell>
+                <mp-cell prop="phoneNO" title="手机号码">
+                    <input maxlength="11" type="number" data-field="phoneNO" class="weui-input" bindinput="formInputChange" 
+                    value="{{phone}}"></input>
+                </mp-cell>
+            </mp-cells>
+        </mp-form>
+        <view slot="button" >
+            <button type="primary" class="weui-btn" bindtap="submitForm">保存</button>
+        </view>
+    </mp-form-page>
+    <!--view wx:else>
+        <text>您尚未登录</text>
+        <button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo">
+            点此登录
+        <button>
+    </view-->
+</view>

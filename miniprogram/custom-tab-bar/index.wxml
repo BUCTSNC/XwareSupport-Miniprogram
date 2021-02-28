@@ -1,0 +1,4 @@
+<!--components/navigation/navigation.wxml-->
+<cover-view>
+  <mp-tabbar style="position:fixed;bottom:0;width:100%;left:0;right:0;backgroundColor:#ffffff" list="{{list}}" bindchange="switchTab" current="{{selected}}"></mp-tabbar>
+</cover-view>

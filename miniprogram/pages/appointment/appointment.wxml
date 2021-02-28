@@ -1,0 +1,50 @@
+<!--pages/appointment/appointment.wxml-->
+<view class="info">
+  <mp-cells title="故障信息">
+    <mp-cell>
+      <view>故障类型:</view>
+      <view slot="footer">{{appointmentInfo.problemType}}</view>
+    </mp-cell>
+    <mp-cell>
+      <view>故障描述/留言:</view>
+      <view slot="footer">{{describe}}</view>
+    </mp-cell>
+  </mp-cells>
+  <mp-cells title="预约信息">
+    <mp-cell>
+      <view>预约日期:</view>
+      <view slot="footer">{{appointmentInfo.date}}</view>
+    </mp-cell>
+    <mp-cell>
+      <view>预约时间段:</view>
+      <view slot="footer">{{appointmentInfo.slot}}</view>
+    </mp-cell>
+    <mp-cell>
+      <view slot="title">预约状态:</view>
+      <view slot="footer" class="{{status.classType}}">{{status.Text}}</view>
+    </mp-cell>
+  </mp-cells>
+  <mp-cells title="预约人信息">
+    <mp-cell>
+      <view>姓名:</view>
+      <view slot="footer">{{userInfo.realName}}</view>
+    </mp-cell>
+    <mp-cell>
+      <view>学号:</view>
+      <view slot="footer">{{userInfo.NO}}</view>
+    </mp-cell>
+    <mp-cell>
+      <view slot="title">申请时间:</view>
+      <view slot="footer">{{appointmentInfo.applyTime}}</view>
+    </mp-cell>
+    
+  </mp-cells>
+  <mp-cells title="处理状态" wx:if="{{allevents.length!=0}}">
+    <mp-cell link hover bindtap="toEvent">
+      查看处理状态
+    </mp-cell>
+  </mp-cells>
+
+  <canvas id="qrcode" canvas-id="qrcode"></canvas>
+  
+</view>
